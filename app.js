@@ -9,6 +9,9 @@ const path = require('path');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const router = require('./routes/index');
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('express-flash')
 const app = express();
 
 // Set environment config path
