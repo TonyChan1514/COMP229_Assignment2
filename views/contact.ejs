@@ -1,0 +1,44 @@
+<!-- Created by : Chi Shing Chan - Student ID # 301268811 - Created on: 04 Jun, 2023 -->
+<%- include('partials/header') %>
+
+    <%- include('partials/content', { topTitle: "Contact Me" }) %>
+
+    <h4>
+        Mobile: (647) 383-6573<br>
+        Email: tonychan1514@gmail.com
+    </h4>
+
+    <p>You may also fill in the form and leave me a message. I will reach you back as soon as possible!</p>   
+    <div class="ContactContainer">
+        <form action="/" method="GET">
+            <input type="hidden" name="_error" value="https://google.com" />
+            <fieldset>
+                <p>
+                    <label for="firstName">First Name: </label>
+                    <input id="firstName" name="firstName" size="30" type="text" required="required" tabindex="1">
+                </p>
+                <p>
+                    <label for="lastName">Last Name: </label>
+                    <input id="lastName" name="lastName" size="30" type="text" required="required" tabindex="3">
+                </p>
+                <p>
+                    <label for="phone">Phone: </label>
+                    <input id="phone" name="phone" size="30" type="tel" required="required" placeholder="647-383-6573" tabindex="5">
+                </p>
+                <p>
+                    <label for="email">Email: </label>
+                    <input id="email" name="email" size="40" type="email" required="required" tabindex="7">
+                </p>
+                <p>
+                    <label for="messages">Messages to me:</label>
+                    <textarea id="messages" name="comments" cols="40" rows="4" tabindex="9"></textarea>
+                </p>
+            </fieldset>
+            <p>
+                <input name="submitButton" type="submit" value="Submit" tabindex="31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="resetButton" type="reset" value="Clear" tabindex="33">
+            </p>
+        </form>
+    </div>
+
+<%- include('partials/footer') %>

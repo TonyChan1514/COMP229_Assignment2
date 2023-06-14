@@ -1,0 +1,206 @@
+/*  Author: Chi Shing Chan
+    Student ID # 301268811
+    Date: 04 Jun, 2023
+    File: style.css
+ */
+
+/* Global Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;  
+  text-align: center;
+}
+
+h1 {
+  text-align:center;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #7658e4;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 40px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  overflow: hidden;
+  color: black;
+}
+
+/* Custom Logo */
+.MyLogo {
+  margin-right: 20px;
+}
+
+.MyLogo img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+/* Button */
+.homeButton {
+  background-color: #7658e4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 40px 40px;
+  cursor: pointer;
+}
+
+.resumeButton {
+  background-color: #eb2b2b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 40px 40px;
+  cursor: pointer;
+}
+
+.projectButton {
+  background-color: #119605;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 20px 5px;
+  cursor: pointer;
+}
+
+/* About Me */
+#myProfile{
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myPicture {
+  order: 1;
+}
+
+#myInfo {
+  order: 2;
+}
+
+#profile_picture {
+  width: 250px;
+  height: auto;
+}
+
+/* Project Lists */
+.ProjectSummary{
+  width: 1000px;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.ProjectImage{
+  order: 0;
+}
+
+.ProjectDescription{
+  order: 1;
+  text-align: left;
+}
+
+/* Service Lists */
+.ServiceSummary{
+  width: 1000px;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.ServiceImage{
+  order: 0;
+}
+
+.ServiceDescription{
+  order: 1;
+  text-align: left;
+}
+
+/* Contact */
+label {
+  width: 400px;
+  float: left;
+}
+
+fieldset {
+margin-bottom: 30px;
+box-shadow: 5px 5px 5px gray;
+text-align: left;
+}
+
+input {
+background-color:azure;
+}
+
+textarea {
+font-family: Arial, Helvetica, sans-serif;
+background-color:azure;
+}
+
+input[type=submit],
+input[type=reset]
+{
+background-color:azure;
+font-size: 16px;
+font-weight: bold;
+color:blue;
+text-align:center;
+font-style: normal;
+margin-bottom: 10px;
+width: 100px;
+height: 30px;
+
+}
+
+.ContactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer and Copyright */
+footer {
+  font-size: small;
+  background-color: #ddd;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+}
+
+#copyright {
+  color:black;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
