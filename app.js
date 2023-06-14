@@ -6,9 +6,13 @@
 
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const router = require('./routes/index');
 const app = express();
+
+// Set environment config path
+dotenv.config({ path:'config.env'});
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
