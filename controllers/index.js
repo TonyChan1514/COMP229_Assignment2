@@ -28,3 +28,13 @@ exports.services = function (req, res){
 exports.contact = function (req, res){
     res.render("contact", { title: "Contact" })
 };
+
+// Call Login page
+exports.login = function(req, res) {
+    res.render("login", { title: "Login" });
+}
+
+// Call Register page
+exports.register = function(req, res) {
+    res.render("register", { title: "Register" });
+}
