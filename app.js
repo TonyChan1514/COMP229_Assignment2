@@ -16,9 +16,12 @@ const app = express();
 
 // Set environment config path
 dotenv.config({ path:'config.env'});
-const mongodb = process.env.MONGODB_URI;
+
+// Config passport
+require('./config/passport')(passport);
 
 // Connect to MongoDB
+const mongodb = process.env.MONGODB_URI;
 mongoose.connect(mongodb, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -27,26 +30,12 @@ mongoose.connect(mongodb, {
 }).catch((err) => console.log(err)
 );
 
-
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Set the static path
-app.use(express.static('public'));
-
-// Router
-app.use(express.json());
+// Body Parser
 app.use(express.urlencoded({ extended: false }));
-app.use('/', router);
-app.use('/', require('./routes/user'));
-//app.use('/dashboard', require('./routes/contact'));
-
-// Passport session
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(flash());
 
 // Configure seession
 app.use(
@@ -56,6 +45,21 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+app.use(express.json());
+app.use(flash());
+
+// Passport session
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Set the static path
+app.use(express.static('public'));
+
+// Router
+app.use('/', router);
+app.use('/user', require('./routes/user'));
+//app.use('/dashboard', require('./routes/contact'));
 
 // Start the server
 app.listen(process.env.PORT || 3000, () => {

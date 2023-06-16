@@ -10,12 +10,10 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const user = require('../models/user');
+const controller = require("../controllers/index");
 
 const { forwardAuthenticated } = require('../config/auth');
-const controller = require("../controllers/index");
-//const authController = require('../controllers/auth');
 
-//router.get('/login', controller.login);
 router.get('/login', forwardAuthenticated, controller.login);
 
 module.exports = router;
