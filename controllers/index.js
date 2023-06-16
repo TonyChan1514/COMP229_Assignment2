@@ -35,6 +35,6 @@ exports.login = function(req, res) {
 }
 
 // Call Register page
-exports.register = function(req, res) {
-    res.render("register", { title: "Register" });
+exports.bizcontact = function(req, res) {
+    res.render("bizcontact", { title: "Business Contact" });
 }

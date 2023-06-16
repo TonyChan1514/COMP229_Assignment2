@@ -35,31 +35,40 @@ module.exports = function (passport) {
     });
 
     passport.deserializeUser((id, done) => {
-        User.findById(id, (err, user) => {
-            done(err, user);
+        User.findById(id).exec()
+        .then((user) => {
+            done(null, user);
+        })
+        .catch((err) => {
+            done(err);
         });
     });
 };
 
-/*module.exports = function (passport) {
-    passport.use(
-        new LocalStrategy((username, password, done) => {
-            User.findOne({ username: username }, (err, user) => {
-                if (err) return done(err);
-                if (!user) return done(null, false);
-                if (user.password !== password) return done(null, false);
-                return done(null, user);
-            });
-        })
-    );
 
-    passport.serializeUser((user, done) => {
-        done(null, user.id);
-    });
-    
-    passport.deserializeUser((id, done) => {
-        User.findById(id, (err, user) => {
-            done(err, user);
-        });
-    });
-};*/
+// Create user record (Temp)
+/*
+const userRecord = new User({
+  username: 'peggyau',
+  password: 'password', // Make sure to hash this password in your actual application
+  email: 'peggyau@gmail.com',
+  // Other relevant information
+});
+
+// Hash the password before saving the user record
+bcrypt.genSalt(10, (err, salt) => {
+  bcrypt.hash(userRecord.password, salt, (err, hash) => {
+    if (err) throw err;
+
+    userRecord.password = hash;
+
+    userRecord.save()
+      .then((user) => {
+        console.log('User record created:', user);
+      })
+      .catch((err) => {
+        console.log('Error creating user record:', err);
+      });
+  });
+});
+*/

@@ -1,0 +1,24 @@
+<!-- Created by : Chi Shing Chan - Student ID # 301268811 - Created on: 16 Jun, 2023 -->
+<%- include('partials/header') %>
+
+    <%- include('partials/content', { topTitle: "Business Contact Lists" }) %>
+
+    <div class="LoginContainer">
+        <form action="/user/login" method="POST">
+            <fieldset>
+                <p>
+                    <label for="username">User Name: </label>
+                    <input id="username" name="username" size="20" type="text" required="required" tabindex="1">
+                </p>
+                <p>
+                    <label for="password">Password: </label>
+                    <input id="password" name="password" size="20" type="password" required="required" tabindex="3">
+                </p>
+            </fieldset>
+            <p>
+                <input name="submitButton" type="submit" value="Submit" tabindex="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+        </form>
+    </div>
+
+<%- include('partials/footer') %>
