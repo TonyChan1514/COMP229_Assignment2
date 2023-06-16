@@ -189,6 +189,13 @@ height: 30px;
   align-items: center;
 }
 
+.LoginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* Footer and Copyright */
 footer {
   font-size: small;

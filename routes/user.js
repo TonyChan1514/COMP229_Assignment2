@@ -16,4 +16,9 @@ const { forwardAuthenticated } = require('../config/auth');
 
 router.get('/login', forwardAuthenticated, controller.login);
 
+router.post('/login', forwardAuthenticated, passport.authenticate('local', {
+    successRedirect: '/bizcontact',
+    failureRedirect: '/',
+  }));
+
 module.exports = router;
