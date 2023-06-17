@@ -1,3 +1,8 @@
+/*  Author: Chi Shing Chan
+    Student ID # 301268811
+    Date: 16 Jun, 2023
+    File: controllers/bizcontact.js
+ */
 
 const Contact = require('../models/bizcontact');
 
@@ -15,7 +20,7 @@ exports.getContacts = function(req, res) {
 
 // Call Add Business Contact page
 exports.addBizContact = function(req, res) {
-    res.render("addBizContact", { title: "Add Business Contact" });
+    res.render("bizcontact_add", { title: "Add Business Contact" });
 }
 
 // Call method to add a new contact to MongoDB
@@ -45,7 +50,7 @@ exports.updateBizContact = function(req, res) {
     const contactId = req.params.id;
     Contact.findById(contactId)
     .then((contact) => {
-        res.render("updateBizContact", { title: "Update Business Contact", contact: contact });
+        res.render("bizcontact_update", { title: "Update Business Contact", contact: contact });
     })
     .catch((err) => {
         console.log(err);

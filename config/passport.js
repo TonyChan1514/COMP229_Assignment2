@@ -1,6 +1,10 @@
+/*  Author: Chi Shing Chan
+    Student ID # 301268811
+    Date: 16 Jun, 2023
+    File: config/passport.js
+ */
 
-
-const User = require('../models/user');
+const User = require('../models/users');
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require('bcryptjs');
 
@@ -53,22 +57,4 @@ const userRecord = new User({
   password: 'password', // Make sure to hash this password in your actual application
   email: 'peggyau@gmail.com',
   // Other relevant information
-});
-
-// Hash the password before saving the user record
-bcrypt.genSalt(10, (err, salt) => {
-  bcrypt.hash(userRecord.password, salt, (err, hash) => {
-    if (err) throw err;
-
-    userRecord.password = hash;
-
-    userRecord.save()
-      .then((user) => {
-        console.log('User record created:', user);
-      })
-      .catch((err) => {
-        console.log('Error creating user record:', err);
-      });
-  });
-});
-*/
+});*/

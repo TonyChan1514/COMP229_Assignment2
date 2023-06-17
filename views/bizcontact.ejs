@@ -9,13 +9,13 @@
     </div>
 
     <div class="Container">
-        <table>
+        <table class="bizContactTable">
 		    <thead>
 			    <tr>
-				    <th>Contact Name</th>
-				    <th>Contact Number</th>
-				    <th>Email Address</th>
-                    <th></th>
+				    <th class="bizContactHeader">Contact Name</th>
+				    <th class="bizContactHeader">Contact Number</th>
+				    <th class="bizContactHeader">Email Address</th>
+                    <th class="bizContactHeader">Edit</th>
 			    </tr>
 		    </thead>
 		    <tbody>
@@ -25,14 +25,15 @@
 					    <td><%= contact.contactPhone %></td>
 					    <td><%= contact.email %></td>
 					    <td>
-                            <a href="/bizcontact/update/<%= contact._id %>" class="logoutButton">Update</a>
-                            <a href="#" class="logoutButton" onclick="confirmDeleteContact('<%= contact._id %>', '<%= contact.contactName %>')">Delete</a>
+                            <a href="/bizcontact/update/<%= contact._id %>" class="addContactButton">Update</a>
+                            <a href="#" class="deleteContactButton" onclick="confirmDeleteContact('<%= contact._id %>', '<%= contact.contactName %>')">Delete</a>
                         </td>
 			    	</tr>
 			    <% }); %>
 		    </tbody>
 	    </table>
     </div>
+    <br>
 
     <script>
         // Prompt confirmation before logout

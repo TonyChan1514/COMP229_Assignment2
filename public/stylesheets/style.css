@@ -102,8 +102,20 @@ h1 {
   cursor: pointer;
 }
 
+.deleteContactButton {
+  background-color: indianred;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 5px;
+  cursor: pointer;
+}
+
 .logoutButton {
-  background-color: #cc487f;
+  background-color:darkseagreen;
   border: none;
   color: white;
   padding: 10px 15px;
@@ -213,6 +225,25 @@ height: 30px;
   align-items: center;
 }
 
+/* Business Contact Table */
+
+.bizContactTable {
+  width: 85%;
+  border-collapse: collapse;
+}
+
+.bizContactTable th, .bizContactTable td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.bizContactTable th {
+  background-color:antiquewhite;
+}
+
+.bizContactHeader {
+  width: 25%;
+}
 
 /* Footer and Copyright */
 footer {
