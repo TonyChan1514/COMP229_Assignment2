@@ -5,7 +5,7 @@ module.exports = {
             return next();
         }
         // Redirect to login page if not authenticated
-        res.redirect('/user/login');
+        res.redirect('/login');
     },
 
     forwardAuthenticated: (req, res, next) => {

@@ -34,7 +34,12 @@ exports.login = function(req, res) {
     res.render("login", { title: "Login" });
 }
 
-// Call Register page
-exports.bizcontact = function(req, res) {
-    res.render("bizcontact", { title: "Business Contact" });
-}
+// Call Logout page
+exports.logout = function(req, res) {
+    req.session.destroy(function(err) {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/login');
+    });
+};

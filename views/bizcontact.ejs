@@ -3,22 +3,53 @@
 
     <%- include('partials/content', { topTitle: "Business Contact Lists" }) %>
 
-    <div class="LoginContainer">
-        <form action="/user/login" method="POST">
-            <fieldset>
-                <p>
-                    <label for="username">User Name: </label>
-                    <input id="username" name="username" size="20" type="text" required="required" tabindex="1">
-                </p>
-                <p>
-                    <label for="password">Password: </label>
-                    <input id="password" name="password" size="20" type="password" required="required" tabindex="3">
-                </p>
-            </fieldset>
-            <p>
-                <input name="submitButton" type="submit" value="Submit" tabindex="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-        </form>
+    <div class="btn-group" role="group" aria-label="Actions">
+        <a href="/bizcontact/add" class="addContactButton">Add Contact</a>
+        <a href="#" class="logoutButton" onclick="confirmLogout()">Logout</a>
     </div>
 
+    <div class="Container">
+        <table>
+		    <thead>
+			    <tr>
+				    <th>Contact Name</th>
+				    <th>Contact Number</th>
+				    <th>Email Address</th>
+                    <th></th>
+			    </tr>
+		    </thead>
+		    <tbody>
+			    <% contacts.forEach(function(contact) { %>
+				    <tr>
+					    <td><%= contact.contactName %></td>
+					    <td><%= contact.contactPhone %></td>
+					    <td><%= contact.email %></td>
+					    <td>
+                            <a href="/bizcontact/update/<%= contact._id %>" class="logoutButton">Update</a>
+                            <a href="#" class="logoutButton" onclick="confirmDeleteContact('<%= contact._id %>', '<%= contact.contactName %>')">Delete</a>
+                        </td>
+			    	</tr>
+			    <% }); %>
+		    </tbody>
+	    </table>
+    </div>
+
+    <script>
+        // Prompt confirmation before logout
+        function confirmLogout() {
+            let isConfirmLogout = confirm('Confirm Logout?');
+            if (isConfirmLogout) {
+                window.location.href = '/logout';
+            }
+        }
+
+        // Prompt confirmation before deleting the selected contact record
+        function confirmDeleteContact(contactId, contactName) {
+            let isConfirmDelete = confirm('Confirm to delete contact record of <' + contactName + '>?');
+            if (isConfirmDelete) {
+                window.location.href = '/bizcontact/delete/' + contactId;
+            }
+        }
+    </script>
+      
 <%- include('partials/footer') %>

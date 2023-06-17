@@ -58,7 +58,6 @@ app.use(express.static('public'));
 
 // Router
 app.use('/', router);
-app.use('/user', require('./routes/user'));
 
 // Start the server
 app.listen(process.env.PORT || 3000, () => {

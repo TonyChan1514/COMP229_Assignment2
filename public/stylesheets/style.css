@@ -90,6 +90,30 @@ h1 {
   cursor: pointer;
 }
 
+.addContactButton {
+  background-color: #4886cc;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 5px;
+  cursor: pointer;
+}
+
+.logoutButton {
+  background-color: #cc487f;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 5px;
+  cursor: pointer;
+}
+
 /* About Me */
 #myProfile{
   display: flex;
@@ -149,7 +173,7 @@ h1 {
 
 /* Contact */
 label {
-  width: 400px;
+  width: 300px;
   float: left;
 }
 
@@ -183,13 +207,7 @@ height: 30px;
 
 }
 
-.ContactContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.LoginContainer {
+.Container {
   display: flex;
   justify-content: center;
   align-items: center;
