@@ -20,9 +20,24 @@
                 </p>
             </fieldset>
             <p>
-                <input name="submitButton" type="submit" value="Update" tabindex="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" class="deleteContactButton" onclick="confirmDeleteContact('<%= contact._id %>', '<%= contact.contactName %>')">Delete</a>
+                <input name="submitButton" type="submit" value="Update" tabindex="7">
+                <a href="/bizcontact" class="logoutButton">Cancel</a>
             </p>
         </form>
     </div>
+    <div>
+
+    </div>
+
+    <script>
+        // Prompt confirmation before deleting the selected contact record
+        function confirmDeleteContact(contactId, contactName) {
+            let isConfirmDelete = confirm('Confirm to delete contact record of <' + contactName + '>?');
+            if (isConfirmDelete) {
+                window.location.href = '/bizcontact/delete/' + contactId;
+            }
+        }
+    </script>
       
 <%- include('partials/footer') %>
