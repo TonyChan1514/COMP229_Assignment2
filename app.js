@@ -20,6 +20,8 @@ dotenv.config({ path:'config.env'});
 // Config passport
 require('./config/passport')(passport);
 
+console.log(process.env.MONGODB_URI);
+
 // Connect to MongoDB
 const mongodb = process.env.MONGODB_URI;
 mongoose.connect(mongodb, {
